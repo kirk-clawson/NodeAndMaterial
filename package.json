@@ -1,0 +1,24 @@
+{
+  "name": "node-and-material",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirk-clawson/NodeAndMaterial.git"
+  },
+  "author": "Kirk Clawson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirk-clawson/NodeAndMaterial/issues"
+  },
+  "homepage": "https://github.com/kirk-clawson/NodeAndMaterial#readme"
+}
