@@ -6,7 +6,14 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-var db = mongoose.connect('mongodb://localhost/bookAPI');
+var db;
+
+if (process.env.ENV == 'INT') {
+    db = mongoose.connect('mongodb://localhost/bookAPI_int');
+} else {
+    db = mongoose.connect('mongodb://localhost/bookAPI');
+}
+
 var Book = require('./models/bookModel');
 var app = express();
 
@@ -16,12 +23,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 var bookRouter = require('./routes/bookroutes')(Book);
-app.use('/api', bookRouter);
+app.use('/api/books', bookRouter);
 
 app.get('/', function(req, res){
     res.send('Hello World');
 });
 
 app.listen(port, function () {
-    console.log('Gulp is listening on PORT: ' + port);
+    console.log('Listening on PORT: ' + port);
 });
+
+module.exports = app;

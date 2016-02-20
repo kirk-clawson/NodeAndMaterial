@@ -11,7 +11,19 @@ gulp.task('default', function(){
         script:'app.js',
         ext: 'js',
         env: {
-            PORT: 3030
+            ENV: 'DEV'
+        },
+        ignore: ['./node_modules/**']
+    });
+});
+
+gulp.task('int', function(){
+    "use strict";
+    nodemon({
+        script:'app.js',
+        ext: 'js',
+        env: {
+            ENV: 'INT'
         },
         ignore: ['./node_modules/**']
     });
