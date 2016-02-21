@@ -17,8 +17,8 @@
     "supertest": "^1.2.0"
   },
   "scripts": {
-    "start": "node app.js",
-    "test": "gulp tests"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",

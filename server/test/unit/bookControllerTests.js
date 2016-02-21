@@ -20,7 +20,7 @@ describe('Book Controller Tests', function(){
                 send: sinon.spy()
             };
 
-            var underTest = require('../../controllers/bookController')(mockBook);
+            var underTest = require('../.././bookController')(mockBook);
             underTest.post(mockReq, mockRes);
 
             mockRes.status.calledWith(400).should.equal(true, 'Bad Status ' + mockRes.status.args[0][0]);

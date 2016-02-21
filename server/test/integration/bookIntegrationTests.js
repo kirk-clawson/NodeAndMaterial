@@ -2,10 +2,11 @@
  * Created by Kirk.Clawson on 2/19/2016.
  */
 
+var port = process.env.PORT || 3001;
 var should = require('should');
 var app = require('../../app.js');
 var mongoose = require('mongoose');
-var agent = require('supertest').agent(app);
+var agent = require('supertest').agent(app.listen(port));
 
 var Book = mongoose.model('Book');
 
