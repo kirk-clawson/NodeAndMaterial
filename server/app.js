@@ -21,16 +21,11 @@ if (environment == 'Prod') {
 var Book = require('./models/bookModel');
 var expressApp = express();
 
-
+expressApp.use(express.static('client', {index:'index.html'}));
 expressApp.use(bodyParser.urlencoded({ extended: true }));
 expressApp.use(bodyParser.json());
 
 var bookRouter = require('./routes/bookroutes')(Book);
 expressApp.use('/api/books', bookRouter);
-
-expressApp.get('/', function(req, res){
-    res.send('Hello World');
-});
-
 
 module.exports = expressApp;
